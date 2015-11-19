@@ -16,10 +16,10 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /tmp/* /var/tmp/*
 
-VOLUME /var/opt/graylog/data
-VOLUME /var/log/graylog
-VOLUME /opt/graylog/plugin
-VOLUME /opt/graylog/conf/nginx/ca
+RUN mkdir -p /var/opt/graylog/data
+RUN mkdir -p /var/log/graylog
+RUN mkdir -p /opt/graylog/plugin
+RUN mkdir -p /opt/graylog/conf/nginx/ca
 
 # web interface
 EXPOSE 9000
